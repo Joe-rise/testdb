@@ -1,0 +1,2 @@
+1649003400126|3|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8|INSERT INTO test_user  ( user_name, password, mobile )  VALUES  ( ?, ?, ? )|INSERT INTO test_user  ( user_name, password, mobile )  VALUES  ( '234', '234324324', '1324526789' )
+1649003400145|4|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8||
