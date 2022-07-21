@@ -26,6 +26,9 @@ import javax.validation.Valid;
 import java.lang.reflect.Method;
 import java.util.List;
 
+/**
+ * job
+ */
 @RestController
 @RequestMapping("job")
 public class SysJobController {
@@ -39,6 +42,12 @@ public class SysJobController {
     @Autowired
     CronTaskRegistrar cronTaskRegistrar;
 
+    /**
+     * create
+     * @param sysJobCreateRequest
+     * @return
+     * @throws BusinessException
+     */
     @PostMapping("create")
     public Boolean create(@Valid @RequestBody SysJobCreateRequest sysJobCreateRequest) throws BusinessException {
         // 校验bean和method
@@ -63,32 +72,66 @@ public class SysJobController {
         return sysJobService.create(sysJob);
     }
 
+    /**
+     * start
+     * @param id
+     * @return
+     * @throws BusinessException
+     */
     @GetMapping("start")
     public Boolean startJob(@RequestParam("id") String id) throws BusinessException{
         return sysJobService.start(id);
     }
 
+    /**
+     * stop
+     * @param id
+     * @return
+     * @throws BusinessException
+     */
     @GetMapping("stop")
     public Boolean stopJob(@RequestParam("id") String id) throws BusinessException{
         return sysJobService.stop(id);
     }
 
+    /**
+     * delete
+     * @param id
+     * @return
+     * @throws BusinessException
+     */
     @DeleteMapping("delete")
     public Boolean delete(@RequestParam("id") String id) throws BusinessException {
         return sysJobService.delete(id);
     }
 
+    /**
+     * update
+     * @param sysJobUpdateRequest
+     * @return
+     * @throws BusinessException
+     */
     @PostMapping("update")
     public Boolean update(@RequestBody SysJobUpdateRequest sysJobUpdateRequest) throws BusinessException {
         SysJob sysJob = DtoConvertUtil.copyFrom(sysJobUpdateRequest, SysJob::new);
         return sysJobService.update(sysJob);
     }
 
+    /**
+     * list
+     * @return
+     */
     @PostMapping("list")
     public List<SysJob> list(){
         return sysJobService.list();
     }
 
+    /**
+     * runOnce
+     * @param id
+     * @return
+     * @throws BusinessException
+     */
     @GetMapping("runOnce")
     public boolean runOnce(@RequestParam("id") String id) throws BusinessException {
 //        配置代码运行一次

@@ -1,5 +1,6 @@
 package com.joe.testdb.controller;
 
+import com.joe.testdb.TestdbApplication;
 import com.joe.testdb.controller.testuser.TestUserController;
 import com.joe.testdb.module.user.mapper.TestUserMapper;
 import com.joe.testdb.module.user.service.TestUserService;
@@ -11,13 +12,17 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(TestUserController.class)
+@ActiveProfiles("test")
+@RunWith(SpringRunner.class)
+@AutoConfigureMockMvc
+@SpringBootTest(classes = TestdbApplication.class)
 public class UserControllerTest {
 
     @Autowired
@@ -28,7 +33,6 @@ public class UserControllerTest {
 
     @MockBean
     private TestUserMapper testUserMapper;
-
 
     @Test
     public void create() throws Exception {
