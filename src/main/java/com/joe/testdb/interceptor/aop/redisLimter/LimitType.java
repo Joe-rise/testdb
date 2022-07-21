@@ -1,4 +1,4 @@
-package com.joe.testdb.interceptor.aop;
+package com.joe.testdb.interceptor.aop.redisLimter;
 
 /**
  * 限流类型

@@ -1,4 +1,6 @@
-package com.joe.testdb.interceptor.aop;
+package com.joe.testdb.interceptor.aop.redisLimter;
+
+import com.joe.testdb.interceptor.aop.redisLimter.LimitType;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

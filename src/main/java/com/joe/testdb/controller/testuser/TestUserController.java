@@ -5,8 +5,9 @@ import com.joe.testdb.config.ProjectConfig;
 import com.joe.testdb.controller.testuser.dto.QueryRequest;
 import com.joe.testdb.controller.testuser.dto.TestUserCreateRequest;
 import com.joe.testdb.exception.BusinessException;
-import com.joe.testdb.interceptor.aop.LimitType;
-import com.joe.testdb.interceptor.aop.RateLimiter;
+import com.joe.testdb.interceptor.aop.redisLimter.LimitType;
+import com.joe.testdb.interceptor.aop.redisLimter.RateLimiter;
+import com.joe.testdb.interceptor.aop.singleLimter.Limit;
 import com.joe.testdb.module.user.entity.TestUser;
 import com.joe.testdb.module.user.mapper.TestUserMapper;
 import com.joe.testdb.module.user.service.TestUserService;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * user
@@ -47,7 +48,8 @@ public class TestUserController {
      * @return
      * @throws BusinessException
      */
-    @RateLimiter(time = 2,count = 5,limitType = LimitType.IP)
+//    @RateLimiter(time = 2,count = 5,limitType = LimitType.IP)
+    @Limit(key = "limit3", permitsPerSecond = 1, timeout = 500, timeunit = TimeUnit.MILLISECONDS,msg = "系统繁忙，请稍后再试！")
     @PostMapping("/create")
     public String create(@Valid @RequestBody TestUserCreateRequest testUserCreateRequest) throws BusinessException {
         TestUser testUser = DtoConvertUtil.copyFrom(testUserCreateRequest, TestUser::new);
