@@ -1,0 +1,348 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "bc252cf8-8514-4018-9391-a9d1b57cca4c",
+    "name": "testdb"
+  },
+  "item": [
+    {
+      "name": "job",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bean_name\": \"son.roob\",\n  \"method_name\": \"son.roob\",\n  \"method_params\": \"r7feem\",\n  \"cron_expression\": \"v6wox9\",\n  \"job_status\": 845,\n  \"remark\": \"32qko7\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/create",
+              "protocol": "http",
+              "path": [
+                "job",
+                "create"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "create",
+            "header": []
+          },
+          "description": "create"
+        },
+        {
+          "name": "start",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/start?id=186",
+              "protocol": "http",
+              "path": [
+                "job",
+                "start"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [
+                {
+                  "key": "id",
+                  "value": "186",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "start",
+            "header": []
+          },
+          "description": "start"
+        },
+        {
+          "name": "stop",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/stop?id=186",
+              "protocol": "http",
+              "path": [
+                "job",
+                "stop"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [
+                {
+                  "key": "id",
+                  "value": "186",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "stop",
+            "header": []
+          },
+          "description": "stop"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/delete?id=186",
+              "protocol": "http",
+              "path": [
+                "job",
+                "delete"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [
+                {
+                  "key": "id",
+                  "value": "186",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete",
+            "header": []
+          },
+          "description": "delete"
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"186\",\n  \"bean_name\": \"son.roob\",\n  \"method_name\": \"son.roob\",\n  \"method_params\": \"mchlfx\",\n  \"cron_expression\": \"9udnvl\",\n  \"job_status\": 852,\n  \"remark\": \"z18cyt\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/update",
+              "protocol": "http",
+              "path": [
+                "job",
+                "update"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "update",
+            "header": []
+          },
+          "description": "update"
+        },
+        {
+          "name": "list",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/list",
+              "protocol": "http",
+              "path": [
+                "job",
+                "list"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "list",
+            "header": []
+          },
+          "description": "list"
+        },
+        {
+          "name": "runOnce",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/job/runOnce?id=186",
+              "protocol": "http",
+              "path": [
+                "job",
+                "runOnce"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [
+                {
+                  "key": "id",
+                  "value": "186",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "runOnce",
+            "header": []
+          },
+          "description": "runOnce"
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_name\": \"son.roob\",\n  \"password\": \"xxc1ab\",\n  \"mobile\": \"240.585.5260\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/create",
+              "protocol": "http",
+              "path": [
+                "user",
+                "create"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "create",
+            "header": []
+          },
+          "description": "create"
+        },
+        {
+          "name": "list",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/list",
+              "protocol": "http",
+              "path": [
+                "user",
+                "list"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "list",
+            "header": []
+          },
+          "description": "list"
+        },
+        {
+          "name": "query",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"current\": 170,\n  \"size\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/query",
+              "protocol": "http",
+              "path": [
+                "user",
+                "query"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "query",
+            "header": []
+          },
+          "description": "query"
+        }
+      ]
+    }
+  ]
+}

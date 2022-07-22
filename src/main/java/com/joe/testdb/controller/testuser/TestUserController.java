@@ -40,7 +40,7 @@ public class TestUserController {
     private ProjectConfig projectConfig;
 
     @Autowired
-    private RedisTemplate<Object,Object> redisTemplate;
+    private RedisTemplate<String,Object> redisTemplate;
 
     /**
      * create
@@ -53,6 +53,7 @@ public class TestUserController {
     @PostMapping("/create")
     public String create(@Valid @RequestBody TestUserCreateRequest testUserCreateRequest) throws BusinessException {
         TestUser testUser = DtoConvertUtil.copyFrom(testUserCreateRequest, TestUser::new);
+        redisTemplate.opsForValue().set("234234","234234");
         return testUserService.create(testUser);
 
     }
